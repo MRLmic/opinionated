@@ -18,7 +18,14 @@
       <button id="SUbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm1">Sign Up</button>
       <p>
       <h1>Welcome To</h1>
-      <img src="./assets/styles/images/megaphone-turned.jpeg" alt="Megaphone">
+      <img id="mega" onclick="play()" value="PLAY" src="./assets/styles/images/megaphone-turned.jpeg" alt="Megaphone">
+      <script type="text/javascript">
+      const play = function () {
+        let audio = document.getElementById("audio")
+        audio.play()
+      }
+      </script>
+      <audio id="audio" src="./assets/sounds/airhorn.mp3" ></audio>
       <h1 class="app-name">Opinionated</h1>
       <h3>A platform for <span>HEAVILY RESTRICTED</span> civil debate.</h3>
       </p>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Opinionated</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans|Pacifico" rel="stylesheet">
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -12,14 +13,44 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <!-- Sign In and Sign Up Trigger Modal Buttons -->
+      <button id="SIbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Sign In</button>
+      <button id="SUbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm1">Sign Up</button>
+      <p>
+      <h1>Welcome To</h1>
+      <img src="./assets/styles/images/megaphone-turned.jpeg" alt="Megaphone">
+      <h1 class="app-name">Opinionated</h1>
+      </p>
+      <!-- Modal for Sign Up -->
+<div class="modal fade bd-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-wrapper">
+    <form class="form-signin">
+      <h2 class="form-signin-heading">Sign Up</h2>
+      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+      <input type="password-confirmation" class="form-control" name="password-confirmation" placeholder="Password Confirmation" required=""/>
+      <button id="sign-up-modal" class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
+    </form>
+  </div>
+    </div>
+  </div>
+</div>
+<!-- Modal for Sign In -->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-wrapper">
+    <form class="form-signin">
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+      <button id="sign-in-modal" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+  </div>
+    </div>
+  </div>
+</div>
     </body>
 </html>

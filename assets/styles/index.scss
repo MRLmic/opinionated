@@ -37,12 +37,21 @@ h3 {
   margin-top: 5px;
 }
 
+.hyp-feed {
+  overflow: scroll;
+}
+
+.hyp-wrapper {
+  margin-left: 80px;
+  margin-top: 40px;
+  width: 40%;
+}
+
 img {
   float: right;
   height: auto;
   margin-left: 0;
   margin-right: 300px;
-  width: 140px;
 }
 
 .modal-wrapper {
@@ -50,7 +59,7 @@ img {
   margin-bottom: 80px;
 }
 
-.form-signin {
+.form-signin, .form-signup {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
@@ -90,7 +99,7 @@ img {
 	  border-top-right-radius: 0;
 	}
 
-  input[type="password-confirmation"] {
+  #pw-confirm-input {
 	  margin-bottom: 20px;
     margin-top: -21px;
 	  border-top-left-radius: 0;
@@ -100,4 +109,8 @@ img {
 
 span {
   text-decoration: line-through;
+}
+
+#SU, #SI {
+  font-size: 32px;
 }

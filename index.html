@@ -13,11 +13,12 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body class="container-fluid">
       <!-- Sign In and Sign Up Trigger Modal Buttons -->
       <button id="SIbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Sign In</button>
       <button id="SUbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm1">Sign Up</button>
-      <p>
+      <section class="landing">
       <h1>Welcome To</h1>
       <img id="mega" onclick="play()" value="PLAY" src="https://drive.google.com/uc?id=0B40BcAMbam60c1hCU0k3NWpCTXc" alt="Megaphone">
       <script type="text/javascript">
@@ -29,32 +30,42 @@
       <audio id="audio" src="https://drive.google.com/uc?id=0B40BcAMbam60U0N5NDMyUk1BdWs" ></audio>
       <h1 class="app-name">Opinionated</h1>
       <h3>A platform for <span>HEAVILY RESTRICTED</span> civil debate.</h3>
-      </p>
+    </section>
       <!-- Modal for Sign Up -->
 <div class="modal fade bd-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
+    <div id="SU" class="modal-content"
       <div class="modal-wrapper">
-    <form class="form-signin">
+    <form class="form-signup" id="sign-up">
       <h2 class="form-signin-heading">Sign Up</h2>
-      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-      <input type="password-confirmation" class="form-control" name="password-confirmation" placeholder="Password Confirmation" required=""/>
-      <button id="sign-up-modal" class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
+      <input type="text" class="form-control" name="credentials[email]" placeholder="Email Address" required="" autofocus="" />
+      <input type="password" class="form-control" name="credentials[password]" placeholder="Password" required=""/>
+      <input type="password" id="pw-confirm-input" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirmation" required=""/>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
     </form>
   </div>
     </div>
   </div>
+  </div>
 <!-- Modal for Sign In -->
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
+    <div id="SI" class="modal-content"
       <div class="modal-wrapper">
     <form class="form-signin">
       <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+      <input type="text" class="form-control" name="credentials[email]" placeholder="Email Address" required="" autofocus="" />
+      <input type="password" class="form-control" name="credentials[password]" placeholder="Password" required=""/>
       <button id="sign-in-modal" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
     </form>
   </div>
+    </div>
+  </div>
+  </div>
+  <!-- Menu of Hypotheses -->
+  <div class="hyp-wrapper">
+    <section>Choose a Debate</section>
+    <div class="hyp-feed">
     </div>
   </div>
     </body>

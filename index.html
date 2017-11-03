@@ -8,7 +8,7 @@
       <link href="https://fonts.googleapis.com/css?family=PT+Sans|Pacifico" rel="stylesheet">
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" type="text/text/css">
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -68,5 +68,20 @@
     <div class="hyp-feed">
     </div>
   </div>
+  <!-- Form for New Argument -->
+  <form id="new-arg">
+  <div class="form-group">
+    <p id="arg-prompt">
+    Time to choose! Please click pro or con to designate your position and outline your argument below.
+  </p>
+    <input type=radio id="pposition" name=argument[position] value=true>
+    <label for="pposition">Pro</label>
+    <input type=radio id="cposition" name=argument[position] value=false>
+    <label for="cposition">Con</label>
+  <label for="argument">Argument: 280 char. max</label>
+  <textarea class="form-control" maxlength="280" rows="5" name="argument[content]" id="argument"></textarea>
+  <button id="new-arg-button" class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+  </div>
+  </form>
     </body>
 </html>

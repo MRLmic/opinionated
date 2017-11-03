@@ -1,12 +1,20 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+#aff {
+  font-family: FontAwesome;
+}
+
 .app-name {
   font-family: pacifico, sans-serif;
   font-size: 150px;
   margin-left: 20px;
   margin-top: 5px;
   padding: 0;
+}
+
+#arg-prompt {
+    padding: 30px;
 }
 
 body {
@@ -51,7 +59,7 @@ img {
   float: right;
   height: auto;
   margin-left: 0;
-  margin-right: 300px;
+  margin-right: 270px;
 }
 
 .modal-wrapper {
@@ -105,6 +113,16 @@ img {
 	  border-top-left-radius: 0;
 	  border-top-right-radius: 0;
 	}
+}
+
+#new-arg {
+  float: right;
+  width: 500px;
+}
+
+#new-arg-button {
+  float: right;
+  // width: inherit;
 }
 
 span {

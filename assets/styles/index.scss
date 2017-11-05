@@ -13,12 +13,49 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   padding: 0;
 }
 
+.arg-feed-wrapper {
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 60px;
+  padding: 0;
+  text-align: left;
+  width: 47%;
+}
+
+.arg-feed {
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  text-align: left;
+  width: 90%;
+}
+
 #arg-prompt {
-    padding: 30px;
+  padding: 20px;
 }
 
 body {
   font-family: PT-sans, sans-serif;
+}
+
+.button-group {
+  float: right;
+  margin: 5px;
+  vertical-align: middle !important;
+}
+
+.con-point {
+  background-color: #ffcccc;
+  border: 3px solid #ff1a1a;
+  border-radius: 5px;
+  display: inline-block;
+  height: content;
+  margin-left: 55px;
+  margin-right: 0;
+  margin-top: 0px;
+  width: 100%;
 }
 
 #SIbutton {
@@ -115,20 +152,53 @@ img {
 	}
 }
 
+// #mega-small {
+//     float: left;
+//     padding: 0;
+// }
+
 #new-arg {
   float: right;
+  margin-top: 80px;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
+  padding: 0;
+  position: sticky;
+  top: 200px;
   width: 500px;
 }
 
-#new-arg-button {
-  float: right;
-  // width: inherit;
+.pro-point {
+    background-color: #c4edd3;
+    border: 3px solid #00b300;
+    border-radius: 5px;
+    display: inline-block;
+    height: content;
+    margin-left: 55px;
+    margin-right: 0;
+    margin-top: 0px;
+    width: 100%;
 }
 
-span {
+#show-arg {
+  float: right;
+  width: 90%;
+}
+
+.redacted {
   text-decoration: line-through;
 }
 
 #SU, #SI {
   font-size: 32px;
+}
+
+.message {
+  float: right;
+  padding-left: 20px;
+  padding-top: 80px;
+  position: sticky;
+  top: 100px;
+  width: 500px;
 }

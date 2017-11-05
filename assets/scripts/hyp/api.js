@@ -14,6 +14,44 @@ const newArg = function (data) {
   })
 }
 
+const getArgs = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/arguments',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    }
+  })
+}
+
+const delArgs = function (argId) {
+  return $.ajax({
+    url: config.apiOrigin + '/arguments/' + argId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    }
+  })
+}
+
+const edArg = function (argId, content) {
+  return $.ajax({
+    url: config.apiOrigin + '/arguments/' + argId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    },
+    data: {
+      argument: {
+        content: content
+      }
+    }
+  })
+}
+
 module.exports = {
-  newArg
+  newArg,
+  getArgs,
+  delArgs,
+  edArg
 }

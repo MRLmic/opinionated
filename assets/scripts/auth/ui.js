@@ -24,7 +24,7 @@ const signInSuccess = function (data) {
 const changePasswordSuccess = function (data) {
   // console.log('Great success!')
   $('#change-password').trigger('reset')
-  $('#message').text('You`ve successfully changed your password!').fadeIn().delay(4000).fadeOut()
+  $('.message').text('You`ve successfully changed your password!').fadeIn().delay(4000).fadeOut()
 }
 
 const signOutSuccess = function () {
@@ -46,22 +46,22 @@ const signOutSuccess = function () {
 
 const signUpFailure = function (data) {
   // console.error(data)
-  $('#message').text('Issue on sign-up! Try again!').fadeIn().delay(4000).fadeOut()
+  $('.message').text('Issue on sign-up! Try again!').fadeIn().delay(4000).fadeOut()
 }
 const signInFailure = function (data) {
   // console.log(data)
   // console.log('failure!')
-  $('#message').text('try again!')
+  $('.message').text('try again!')
 }
 const changePasswordFailure = function (data) {
   // console.log(data)
   // console.log('FAIL!')
-  $('#message').text('Something went wrong, change password!').fadeIn().delay(4000).fadeOut()
+  $('.message').text('Something went wrong, change password!').fadeIn().delay(4000).fadeOut()
 }
 const signOutFailure = function (data) {
   // console.log(data)
   // console.log('FAIL!')
-  $('#message').text('You have not signed out!').fadeIn().delay(4000).fadeOut()
+  $('.message').text('You have not signed out!').fadeIn().delay(4000).fadeOut()
 }
 const failure = (data) => {
   // console.error(data)

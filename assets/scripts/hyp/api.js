@@ -16,7 +16,7 @@ const newArg = function (data) {
 
 const getArgs = function () {
   return $.ajax({
-    url: config.apiOrigin + 'arguments',
+    url: config.apiOrigin + '/arguments',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.token
@@ -26,7 +26,7 @@ const getArgs = function () {
 
 const delArgs = function (argId) {
   return $.ajax({
-    url: config.apiOrigin + 'arguments/' + argId,
+    url: config.apiOrigin + '/arguments/' + argId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.token
@@ -36,7 +36,7 @@ const delArgs = function (argId) {
 
 const edArg = function (argId, content) {
   return $.ajax({
-    url: config.apiOrigin + 'arguments/' + argId,
+    url: config.apiOrigin + '/arguments/' + argId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.token

@@ -49,7 +49,6 @@ const deleteHyp = function (event) {
     $(event.target).closest('button').toggleClass('edits edit btn-success btn-primary')
     $(event.target).closest('h3').attr('contenteditable', 'false')
     $(event.target).closest('a').toggleClass('hyp-select')
-    debugger
     let hypId = $(event.target).closest('h3').attr('data-id')
     let content = event.target.closest('h3').innerText
     api.edHyp(hypId, content)

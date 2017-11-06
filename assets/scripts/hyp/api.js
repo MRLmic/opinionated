@@ -9,7 +9,7 @@ const newHyp = function (data) {
     url: config.apiOrigin + '/hypotheses',
     method: 'POST',
     headers: {
-      Authorization: 'Token token=' + store.token
+      Authorization: 'Token token=' + store.user.token
     },
     data
   })
@@ -20,7 +20,7 @@ const getHyps = function () {
     url: config.apiOrigin + '/hypotheses',
     method: 'GET',
     headers: {
-      Authorization: 'Token token=' + store.token
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
@@ -30,7 +30,7 @@ const getOne = function (hypId) {
     url: config.apiOrigin + '/hypotheses/' + hypId,
     method: 'GET',
     headers: {
-      Authorization: 'Token token=' + store.token
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
@@ -40,7 +40,7 @@ const delHyps = function (hypId) {
     url: config.apiOrigin + '/hypotheses/' + hypId,
     method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + store.token
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
@@ -50,7 +50,7 @@ const edHyp = function (hypId, content) {
     url: config.apiOrigin + '/hypotheses/' + hypId,
     method: 'PATCH',
     headers: {
-      Authorization: 'Token token=' + store.token
+      Authorization: 'Token token=' + store.user.token
     },
     data: {
       hypothesis: {
@@ -67,7 +67,7 @@ const newArg = function (data) {
     url: config.apiOrigin + '/arguments',
     method: 'POST',
     headers: {
-      Authorization: 'Token token=' + store.token
+      Authorization: 'Token token=' + store.user.token
     },
     data
   })
@@ -78,7 +78,7 @@ const getArgs = function () {
     url: config.apiOrigin + '/arguments',
     method: 'GET',
     headers: {
-      Authorization: 'Token token=' + store.token
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
@@ -88,7 +88,7 @@ const delArgs = function (argId) {
     url: config.apiOrigin + '/arguments/' + argId,
     method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + store.token
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
@@ -98,7 +98,7 @@ const edArg = function (argId, content) {
     url: config.apiOrigin + '/arguments/' + argId,
     method: 'PATCH',
     headers: {
-      Authorization: 'Token token=' + store.token
+      Authorization: 'Token token=' + store.user.token
     },
     data: {
       argument: {

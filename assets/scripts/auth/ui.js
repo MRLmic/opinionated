@@ -15,6 +15,7 @@ const signUpSuccess = function (data) {
 
 const signInSuccess = function (data) {
   store.user = data.user
+  store.token = data.token
   $('#change-password').show()
   $('#SIbutton').hide()
   $('#SUbutton').hide()
@@ -53,6 +54,9 @@ const signOutSuccess = function () {
   $('.hyp-wrapper').hide()
   $('#SIbutton').show()
   $('#SUbutton').show()
+  $('#home').hide()
+  $('.single').hide()
+  $('.single').text('')
 }
 
 const signUpFailure = function (data) {

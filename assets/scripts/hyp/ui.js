@@ -62,6 +62,13 @@ const onGetSuccess = function (data) {
   $('.arg-feed').text('')
   let argHTML = argHandles({arguments: data.arguments})
   $('.arg-feed').append(argHTML)
+  for (let i = 0; i < data.arguments.length; i++) {
+    if (store.user.id !== data.arguments[i].user_id) {
+      $(`[data-id="${data.arguments[i].id}"].button-group`).hide()
+    } else {
+      $(`[data-id="${data.arguments[i].id}"].button-group`).show()
+    }
+  }
   $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip({ trigger: 'hover' })
   })

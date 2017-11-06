@@ -43,7 +43,7 @@ const addHandlers = function () {
   $('#home').hide()
   $('#sign-up').on('submit', onSignUp)
   $('.form-signin').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword)
+  $('.change-password').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
 }
 

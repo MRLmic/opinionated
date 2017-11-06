@@ -20,8 +20,16 @@ const onNewHypFailure = function (data) {
 
 const onGetHSuccess = function (data) {
   $('.hyp-feed').text('')
+  console.log(data.hypotheses)
   let hypsHTML = hypsHandles({hypotheses: data.hypotheses})
   $('.hyp-feed').append(hypsHTML)
+  for (let i = 0; i < data.hypotheses.length; i++) {
+    if (store.user.id !== data.hypotheses[i].user_id) {
+      $(`[data-id="${data.hypotheses[i].id}"].button-group`).hide()
+    } else {
+      $(`[data-id="${data.hypotheses[i].id}"].button-group`).show()
+    }
+  }
 }
 
 const onGetHFailure = function (data) {

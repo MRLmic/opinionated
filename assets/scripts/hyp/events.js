@@ -22,6 +22,7 @@ const showHyp = function (event) {
   event.preventDefault()
   if ($(event.target).hasClass('hyp-select')) {
   let hypId = $(event.target).attr('data-id')
+  console.log(hypId)
   api.getOne(hypId)
     .then(ui.onOneSuccess)
     .catch(ui.onOneFailure)
@@ -114,7 +115,7 @@ const addHandlers = function () {
   $('#new-arg').on('submit', newArg)
   $('#show-arg').on('click', showArguments)
   $('.arg-feed').on('click', deleteArgument)
-  $('#new-hyp').on('click', showHypotheses)
+  $('#new-hyp').on('submit', newHyp)
   $('.hyp-feed').on('click', deleteHyp)
   $('.hyp-feed').on('click', showHyp)
   $('#home').on('click', homePage)

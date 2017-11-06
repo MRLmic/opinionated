@@ -15,9 +15,12 @@
     </head>
 
     <body class="container-fluid">
-      <!-- Sign In and Sign Up Trigger Modal Buttons -->
+      <!-- Sign In Sign Up Sign Out Change PW Trigger Modal Buttons -->
       <button id="SIbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Sign In</button>
       <button id="SUbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm1">Sign Up</button>
+      <button id="sign-out" type="button" class="btn btn-primary">Sign Out</button>
+      <button id="change-password" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm2">Change PW</button>
+      <button id="home" type="button" class="btn btn-info">Home</button>
       <section class="landing">
       <h1>Welcome To</h1>
       <img id="mega" onclick="play()" value="PLAY" src="https://drive.google.com/uc?id=0B40BcAMbam60c1hCU0k3NWpCTXc" alt="Megaphone">
@@ -64,14 +67,41 @@
     </div>
   </div>
   </div>
+  <!-- Modal for Change Password -->
+  <div class="modal fade bd-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div id="CP" class="modal-content"
+        <div class="modal-wrapper">
+      <form class="change-password">
+        <h2 class="form-signin-heading">Enter New and Old PW to Change</h2>
+        <input type="text" class="form-control" name="passwords[old]" placeholder="Enter Old PW" required="" autofocus="" />
+        <input type="password" class="form-control" name="passwords[new]" placeholder="New PW" required=""/>
+        <button id="change-pw-modal" class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      </form>
+    </div>
+      </div>
+    </div>
+    </div>
+  <!-- New Hypothesis Form -->
+  <form id="new-hyp">
+  <div class="form-group">
+    <p id="hyp-prompt">
+  Enter a proposal you want to see debated.
+  </p>
+  <label for="argument">Proposal: 140 char. max</label>
+    <input class="form-control" max-length="140" rows="5" type="text" id="hypothesis-input" name=hypothesis[title] required>
+  <button id="new-hyp-button" class="btn btn-md btn-primary btn-block" type="submit">Submit</button>
+  </div>
+  </form>
+  <section class="single"></section>
   <!-- Menu of Hypotheses -->
-  <!-- <div class="hyp-wrapper">
+  <div class="hyp-wrapper">
     <section>Choose a Debate</section>
     <div class="hyp-feed">
     </div>
-  </div> -->
+  </div>
   <div class="arg-feed-wrapper">
-    <h3>Hypothesis</h3>
+    <!-- <h3>Hypothesis</h3> -->
     <button id="show-arg" class="btn btn-lg btn-primary btn-block">See Arguments</button>
     <div class="arg-feed">
     </div>

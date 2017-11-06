@@ -13,6 +13,10 @@ $(() => {
 $(() => {
   authEvents.addHandlers()
   hypEvents.addHandlers()
+  $('#new-arg').hide()
+  $('.hyp-wrapper').hide()
+  $('#new-hyp').hide()
+  $('.arg-feed-wrapper').hide()
 })
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')

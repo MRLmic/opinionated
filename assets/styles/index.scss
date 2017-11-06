@@ -1,5 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+// @import '~bootstrap/scss/animation';
 
 #aff {
   font-family: FontAwesome;
@@ -33,6 +34,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 #arg-prompt {
+  padding: 20px;
+}
+
+#hyp-prompt {
   padding: 20px;
 }
 
@@ -70,6 +75,24 @@ body {
   margin-top: 10px;
 }
 
+#sign-out {
+  float: right;
+  margin-right: 2px;
+  margin-top: 10px;
+}
+
+#home {
+  float: right;
+  margin-right: 2px;
+  margin-top: 10px;
+}
+
+#change-password {
+  float: right;
+  margin-right: 2px;
+  margin-top: 10px;
+}
+
 h1 {
   margin: 0;
   margin-left: 20px;
@@ -83,10 +106,20 @@ h3 {
 }
 
 .hyp-feed {
+  height: 400px;
   overflow: scroll;
 }
 
-.hyp-wrapper {
+.hyp-title {
+  border-bottom-style: dashed;
+  border-width: thin;
+  margin-left: 0;
+  padding: 8px;
+  text-align: left;
+}
+
+.hyp-wrapper, .single {
+  font-size: 16px;
   margin-left: 80px;
   margin-top: 40px;
   width: 40%;
@@ -158,6 +191,18 @@ img {
 // }
 
 #new-arg {
+  float: right;
+  margin-top: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
+  padding: 0;
+  position: sticky;
+  top: 100px;
+  width: 500px;
+}
+
+#new-hyp {
   float: right;
   margin-top: 80px;
   margin-left: 0;

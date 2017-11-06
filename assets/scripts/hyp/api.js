@@ -2,6 +2,65 @@
 const config = require('../config')
 const store = require('../store')
 
+// Hyp Calls
+const newHyp = function (data) {
+  console.log(data)
+  return $.ajax({
+    url: config.apiOrigin + '/hypotheses',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    },
+    data
+  })
+}
+
+const getHyps = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/hypotheses',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    }
+  })
+}
+
+const getOne = function (hypId) {
+  return $.ajax({
+    url: config.apiOrigin + '/hypotheses/' + hypId,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    }
+  })
+}
+
+const delHyps = function (hypId) {
+  return $.ajax({
+    url: config.apiOrigin + '/hypotheses/' + hypId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    }
+  })
+}
+
+const edHyp = function (hypId, content) {
+  return $.ajax({
+    url: config.apiOrigin + '/hypotheses/' + hypId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.token
+    },
+    data: {
+      hypothesis: {
+        title: content
+      }
+    }
+  })
+}
+
+// Argument Calls
 const newArg = function (data) {
   console.log(data)
   return $.ajax({
@@ -53,5 +112,10 @@ module.exports = {
   newArg,
   getArgs,
   delArgs,
-  edArg
+  edArg,
+  getHyps,
+  newHyp,
+  delHyps,
+  edHyp,
+  getOne
 }

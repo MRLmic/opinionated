@@ -31,6 +31,7 @@ const onChangePassword = function (event) {
 }
 const onSignOut = function (event) {
   event.preventDefault()
+  console.log('button clicked')
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
@@ -39,10 +40,11 @@ const onSignOut = function (event) {
 const addHandlers = function () {
   $('#sign-out').hide()
   $('#change-password').hide()
+  $('#home').hide()
   $('#sign-up').on('submit', onSignUp)
   $('.form-signin').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
+  $('#sign-out').on('click', onSignOut)
 }
 
 module.exports = {

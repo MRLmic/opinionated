@@ -56,6 +56,7 @@ const signOutSuccess = function () {
   $('#SUbutton').show()
   $('#home').hide()
   $('.single').hide()
+  $('.arg-feed').text('')
   $('.single').text('')
 }
 

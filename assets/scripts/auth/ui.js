@@ -16,6 +16,7 @@ const signUpSuccess = function (data) {
 const signInSuccess = function (data) {
   store.user = data.user
   store.token = data.token
+  store.id = data.user.id
   $('#change-password').show()
   $('#SIbutton').hide()
   $('#SUbutton').hide()
@@ -43,10 +44,10 @@ const signOutSuccess = function () {
   $('#sign-out').hide()
   store.user = null
   store.data = null
-  store.user.id = null
+  // store.user.id = null
   $('.message').fadeIn().text('Signed Out!').animate({opacity: 1}).delay(550).animate({opacity: 0})
-  $('#sign-up').show()
-  $('#sign-in').show()
+  $('#SIbutton').show()
+  $('#SUbutton').show()
   $('#change-password').hide()
   $('.arg-feed-wrapper').hide()
   $('#new-hyp').hide()

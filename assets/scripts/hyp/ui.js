@@ -71,6 +71,16 @@ const onGetSuccess = function (data) {
   let argHTML = argHandles({arguments: data.arguments})
   $('.arg-feed').append(argHTML)
   for (let i = 0; i < data.arguments.length; i++) {
+    let el = document.getElementById('current-hyp')
+    let hypothesisId = el.getAttribute('data-id')
+    if (data.arguments[i].hypothesis_id == hypothesisId) {
+      $(`[data-id="${data.arguments[i].id}"].pro-point`).show()
+      $(`[data-id="${data.arguments[i].id}"].con-point`).show()
+    } else {
+      $(`[data-id="${data.arguments[i].id}"].pro-point`).hide()
+      $(`[data-id="${data.arguments[i].id}"].con-point`).hide()
+    }
+    for (let i = 0; i < data.arguments.length; i++) {
     if (store.user.id !== data.arguments[i].user_id) {
       $(`[data-id="${data.arguments[i].id}"].button-group`).hide()
     } else {
@@ -80,6 +90,7 @@ const onGetSuccess = function (data) {
   $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip({ trigger: 'hover' })
   })
+}
 }
 
 const onGetFailure = function (data) {

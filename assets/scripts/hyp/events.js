@@ -60,7 +60,11 @@ const deleteHyp = function (event) {
 const newArg = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  api.newArg(data)
+  let content = data.argument.content
+  let position = data.argument.position
+    let el = document.getElementById('current-hyp')
+    let hypothesisId = el.getAttribute('data-id')
+    api.newArg(content, position, hypothesisId)
     .then(ui.onNewArgSuccess)
     .then($(this).trigger('reset'))
     .catch(ui.onNewArgFailure)

@@ -61,15 +61,20 @@ const edHyp = function (hypId, content) {
 }
 
 // Argument Calls
-const newArg = function (data) {
-  console.log(data)
+const newArg = function (content, position, hypothesisId) {
   return $.ajax({
     url: config.apiOrigin + '/arguments',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: {
+      argument: {
+        content: content,
+        position: position,
+        hypothesis_id: hypothesisId
+      }
+    }
   })
 }
 

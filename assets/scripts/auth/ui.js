@@ -10,7 +10,7 @@ const signUpSuccess = function (data) {
   $('.message').fadeIn().text('Success!').animate({opacity: 1}).delay(550).animate({opacity: 0})
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  $('.form-signin').trigger('reset')
+  $('.form-signup').trigger('reset')
 }
 
 const signInSuccess = function (data) {

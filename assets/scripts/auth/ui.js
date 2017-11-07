@@ -43,7 +43,7 @@ const signOutSuccess = function () {
   $('#sign-out').hide()
   store.user = null
   store.data = null
-  store.surveys = null
+  store.user.id = null
   $('.message').fadeIn().text('Signed Out!').animate({opacity: 1}).delay(550).animate({opacity: 0})
   $('#sign-up').show()
   $('#sign-in').show()

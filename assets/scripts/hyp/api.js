@@ -4,7 +4,6 @@ const store = require('../store')
 
 // Hyp Calls
 const newHyp = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/hypotheses',
     method: 'POST',

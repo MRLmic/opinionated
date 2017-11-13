@@ -35,7 +35,7 @@ const signInSuccess = function (data) {
 }
 
 const changePasswordSuccess = function (data) {
-  $('#change-password').trigger('reset')
+  $('#pwchange').trigger('reset')
   $('#change-modal').modal('toggle')
   $('.bubble').fadeIn().text('Password Changed').animate({opacity: 1}).delay(550).animate({opacity: 0})
 }

@@ -10,6 +10,7 @@ const onNewHypSuccess = function (data) {
   api.getHyps()
     .then(onGetHSuccess)
     .then(() => { window.scrollTo(0, document.body.scrollHeight) })
+  $('#new-hyp').trigger('reset')
 }
 
 const onGetHSuccess = function (data) {

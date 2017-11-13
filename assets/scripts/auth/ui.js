@@ -5,10 +5,9 @@ const ui = require('./../hyp/ui')
 const api = require('./../hyp/api')
 
 const signUpSuccess = function (data) {
-  // console.log(data)
-  // console.log('Successfully signed up!')
-  $('.message').fadeIn().text('Success!').animate({opacity: 1}).delay(550).animate({opacity: 0})
+  $('#su-modal').modal('toggle')
   $('body').removeClass('modal-open')
+  $('.bubble').fadeIn().text('Account created! Please sign in.').animate({opacity: 1}).delay(550).animate({opacity: 0})
   $('.modal-backdrop').remove()
   $('.form-signup').trigger('reset')
 }
@@ -23,8 +22,9 @@ const signInSuccess = function (data) {
   $('#sign-out').show()
   $('.modal-backdrop').remove()
   $('body').removeClass('modal-open')
-  $('.message').fadeIn().text('Signed In').delay(550).fadeOut()
+  $('.bubble').fadeIn().text('WELCOME').animate({opacity: 1}).delay(550).animate({opacity: 0})
   $('.form-signin').trigger('reset')
+  $('#si-modal').modal('toggle')
   $('#new-arg').hide()
   $('.arg-feed-wrapper').hide()
   $('#new-hyp').show()
@@ -35,9 +35,9 @@ const signInSuccess = function (data) {
 }
 
 const changePasswordSuccess = function (data) {
-  // console.log('Great success!')
   $('#change-password').trigger('reset')
-  $('.message').fadeIn().text('PW Changed').animate({opacity: 1}).delay(550).animate({opacity: 0})
+  $('#change-modal').modal('toggle')
+  $('.bubble').fadeIn().text('Password Changed').animate({opacity: 1}).delay(550).animate({opacity: 0})
 }
 
 const signOutSuccess = function () {
@@ -45,7 +45,7 @@ const signOutSuccess = function () {
   store.user = null
   store.data = null
   // store.user.id = null
-  $('.message').fadeIn().text('Signed Out!').animate({opacity: 1}).delay(550).animate({opacity: 0})
+  $('.bubble').fadeIn().text('Signed Out').animate({opacity: 1}).delay(550).animate({opacity: 0})
   $('#SIbutton').show()
   $('#SUbutton').show()
   $('#change-password').hide()
@@ -62,26 +62,24 @@ const signOutSuccess = function () {
 }
 
 const signUpFailure = function (data) {
-  // console.error(data)
-  $('#SU').fadeIn().text('Issue on Sign Up, Try Again').animate({opacity: 1}).delay(550).animate({opacity: 0})
+  $('#su-modal').modal('toggle')
+  $('.form-signup').trigger('reset')
+  $('.bubble').fadeIn().text('Issue on Sign Up, Try Again').animate({opacity: 1}).delay(550).animate({opacity: 0})
 }
+
 const signInFailure = function (data) {
-  // console.log(data)
-  // console.log('failure!')
-  $('.message').text('try again!')
+  $('.form-signin').trigger('reset')
+  $('#si-modal').modal('toggle')
+  $('.bubble').fadeIn().text('try again!').animate({opacity: 1}).delay(550).animate({opacity: 0})
 }
+
 const changePasswordFailure = function (data) {
-  // console.log(data)
-  // console.log('FAIL!')
-$('#SU').fadeIn().text('Success!').animate({opacity: 1}).delay(550).animate({opacity: 0})
+  $('#change-password').trigger('reset')
+  $('#change-modal').modal('toggle')
+  $('.bubble').fadeIn().text('Password Change Failed, Try Again').animate({opacity: 1}).delay(550).animate({opacity: 0})
 }
 const signOutFailure = function (data) {
-  // console.log(data)
-  // console.log('FAIL!')
-  $('.message').text('You have not signed out!').fadeIn().delay(4000).fadeOut()
-}
-const failure = (data) => {
-  // console.error(data)
+  $('.bubble').text('You have not signed out!').fadeIn().animate({opacity: 1}).delay(550).animate({opacity: 0})
 }
 
 module.exports = {
@@ -92,6 +90,5 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure,
-  failure
+  signOutFailure
 }

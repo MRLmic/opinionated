@@ -23,6 +23,8 @@
       <button id="home" type="button" class="btn btn-info">Home</button>
       <section class="landing">
       <h1>Welcome To</h1>
+      <div class="bubble"></div>
+      <audio id="pop" src="https://av-wdi-20.s3.amazonaws.com/filebucket/2017-11-12/dde8d18f8d24220aad9cf6eb8e37a5ee.mp3"></audio>
       <img id="mega" onclick="play()" value="PLAY" src="https://drive.google.com/uc?id=0B40BcAMbam60c1hCU0k3NWpCTXc" alt="Megaphone">
       <script type="text/javascript">
       const play = function () {
@@ -37,7 +39,7 @@
       <h3>A platform for <span class="redacted">HEAVILY RESTRICTED</span> civil debate.</h3>
     </section>
       <!-- Modal for Sign Up -->
-<div class="modal fade bd-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div id="su-modal" class="modal fade bd-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div id="SU" class="modal-content"
       <div class="modal-wrapper">
@@ -53,7 +55,7 @@
   </div>
   </div>
 <!-- Modal for Sign In -->
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div id="si-modal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div id="SI" class="modal-content"
       <div class="modal-wrapper">
@@ -68,13 +70,13 @@
   </div>
   </div>
   <!-- Modal for Change Password -->
-  <div class="modal fade bd-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div id="change-modal" class="modal fade bd-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
-      <div id="CP" class="modal-content"
+      <div id="CP" class="modal-content">
         <div class="modal-wrapper">
       <form class="change-password">
         <h2 class="form-signin-heading">Enter New and Old PW to Change</h2>
-        <input type="text" class="form-control" name="passwords[old]" placeholder="Enter Old PW" required="" autofocus="" />
+        <input type="password" class="form-control" name="passwords[old]" placeholder="Enter Old PW" required="" autofocus="" />
         <input type="password" class="form-control" name="passwords[new]" placeholder="New PW" required=""/>
         <button id="change-pw-modal" class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
       </form>

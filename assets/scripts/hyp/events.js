@@ -12,7 +12,6 @@ const newHyp = function (event) {
 
 const showHypotheses = function (event) {
   event.preventDefault()
-  console.log('button cicked')
   api.getHyps()
     .then(ui.onGetHSuccess)
     .catch(ui.onGetHFailure)
@@ -22,7 +21,6 @@ const showHyp = function (event) {
   event.preventDefault()
   if ($(event.target).hasClass('hyp-select')) {
   let hypId = $(event.target).attr('data-id')
-  console.log(hypId)
   api.getOne(hypId)
     .then(ui.onOneSuccess)
     .catch(ui.onOneFailure)

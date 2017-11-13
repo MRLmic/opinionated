@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Opinionated</title>
+      <link rel="shortcut icon" type="image/x-icon" href="https://drive.google.com/uc?id=0B40BcAMbam60bHNvdzFtbWhwZUU">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans|Pacifico" rel="stylesheet">
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" type="text/text/css">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body class="container-fluid">
+      <!-- Sign In Sign Up Sign Out Change PW Trigger Modal Buttons -->
+      <button id="SIbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Sign In</button>
+      <button id="SUbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm1">Sign Up</button>
+      <button id="sign-out" type="button" class="btn btn-primary">Sign Out</button>
+      <button id="change-password" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm2">Change PW</button>
+      <button id="home" type="button" class="btn btn-info">Home</button>
+      <section class="landing">
+      <h1>Welcome To</h1>
+      <div class="bubble"></div>
+      <audio id="pop" src="https://av-wdi-20.s3.amazonaws.com/filebucket/2017-11-12/dde8d18f8d24220aad9cf6eb8e37a5ee.mp3"></audio>
+      <img id="mega" onclick="play()" value="PLAY" src="https://drive.google.com/uc?id=0B40BcAMbam60c1hCU0k3NWpCTXc" alt="Megaphone">
+      <script type="text/javascript">
+      const play = function () {
+        let audio = document.getElementById("audio")
+        audio.currentTime = 0
+          audio.pause()
+          audio.play()
+        }
+      </script>
+      <audio id="audio" src="https://av-wdi-20.s3.amazonaws.com/filebucket/2017-11-04/f4d1b593044038f55b8e962812070cb0.mp3" ></audio>
+      <h1 class="app-name">Opinionated</h1>
+      <h3>A platform for <span class="redacted">HEAVILY RESTRICTED</span> civil debate.</h3>
+    </section>
+      <!-- Modal for Sign Up -->
+<div id="su-modal" class="modal fade bd-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div id="SU" class="modal-content"
+      <div class="modal-wrapper">
+    <form class="form-signup" id="sign-up">
+      <h2 class="form-signin-heading">Sign Up</h2>
+      <input type="text" class="form-control" name="credentials[email]" placeholder="Email Address" required="" autofocus="" />
+      <input type="password" class="form-control" name="credentials[password]" placeholder="Password" required=""/>
+      <input type="password" id="pw-confirm-input" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirmation" required=""/>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
+    </form>
+  </div>
+    </div>
+  </div>
+  </div>
+<!-- Modal for Sign In -->
+<div id="si-modal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div id="SI" class="modal-content"
+      <div class="modal-wrapper">
+    <form class="form-signin">
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" name="credentials[email]" placeholder="Email Address" required="" autofocus="" />
+      <input type="password" class="form-control" name="credentials[password]" placeholder="Password" required=""/>
+      <button id="sign-in-modal" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+  </div>
+    </div>
+  </div>
+  </div>
+  <!-- Modal for Change Password -->
+  <div id="change-modal" class="modal fade bd-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div id="CP" class="modal-content">
+        <div class="modal-wrapper">
+      <form id="pwchange" class="change-password">
+        <h2 class="form-signin-heading">Enter New and Old PW to Change</h2>
+        <input type="password" class="form-control" name="passwords[old]" placeholder="Enter Old PW"/>
+        <input type="password" class="form-control" name="passwords[new]" placeholder="New PW"/>
+        <button id="change-pw-modal" class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      </form>
+    </div>
+      </div>
+    </div>
+    </div>
+  <!-- New Hypothesis Form -->
+  <form id="new-hyp">
+  <div class="form-group">
+    <p id="hyp-prompt">
+  Enter a proposal you want to see debated.
+  </p>
+  <label for="argument">Proposal: 140 char. max</label>
+    <input class="form-control" max-length="140" rows="5" type="text" id="hypothesis-input" name=hypothesis[title] required>
+  <button id="new-hyp-button" class="btn btn-md btn-primary btn-block" type="submit">Submit</button>
+  </div>
+  </form>
+  <section class="single"></section>
+  <!-- Menu of Hypotheses -->
+  <div class="hyp-wrapper">
+    <section>Choose a Debate</section>
+    <div class="hyp-feed">
+    </div>
+  </div>
+  <div class="arg-feed-wrapper">
+    <!-- <h3>Hypothesis</h3> -->
+    <button id="show-arg" class="btn btn-lg btn-primary btn-block">See Arguments</button>
+    <div class="arg-feed">
+    </div>
+    </div>
+
+    <!-- Message Div -->
+      <div class="message">
+      </div>
+
+  <!-- Form for New Argument -->
+  <form id="new-arg">
+  <div class="form-group">
+    <p id="arg-prompt">
+    Time to choose! Please click pro or con to designate your position and outline your argument below.
+  </p>
+    <input type=radio id="pposition" name=argument[position] value=true required>
+    <label for="pposition">Pro</label>
+    <input type=radio id="cposition" name=argument[position] value=false required>
+    <label for="cposition">Con</label>
+  <label for="argument">Argument: 280 char. max</label>
+  <textarea class="form-control" maxlength="280" rows="5" name="argument[content]" id="argument" required></textarea>
+  <button id="new-arg-button" class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+  </div>
+  </form>
+    </body>
+</html>

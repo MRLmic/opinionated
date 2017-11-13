@@ -83,6 +83,11 @@ const onDeleteArgFailure = function (data) {
   $('.bubble').text('The Internet is Forever. There was a problem 📢').animate({opacity: 1}).delay(550).animate({opacity: 0})
 }
 
+const onDeleteHypSuccess = function (data) {
+  api.getHyps()
+    .then(onGetHSuccess)
+}
+
 module.exports = {
   onNewArgSuccess,
   onGetSuccess,
@@ -90,5 +95,6 @@ module.exports = {
   onDeleteArgFailure,
   onNewHypSuccess,
   onGetHSuccess,
-  onOneSuccess
+  onOneSuccess,
+  onDeleteHypSuccess
 }
